@@ -1,0 +1,15 @@
+#!/bin/sh
+
+case "$1" in
+  start)
+	[[ -f /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/musb/hcmusb.ko ]] && insmod /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/musb/hcmusb.ko
+	[[ -f /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/sdio/dw_mmc-pltfm-hc.ko ]] && insmod /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/sdio/dw_mmc-pltfm-hc.ko
+	[[ -f /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/persistentmem-fs/persistent-memory-fs.ko ]] && insmod /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/persistentmem-fs/persistent-memory-fs.ko
+	[[ -f /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/adc/checkadc.ko ]] && insmod /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/adc/checkadc.ko
+	[[ -f /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/adc/keyadc.ko ]] && insmod /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/adc/keyadc.ko
+	[[ -f /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/input/misc/humansensor/new_bl_h18l232b.ko ]] && insmod /lib/modules/$(uname -r)/kernel/drivers/hcdrivers/input/misc/humansensor/new_bl_h18l232b.ko
+	;;
+  *)
+esac
+
+exit $?

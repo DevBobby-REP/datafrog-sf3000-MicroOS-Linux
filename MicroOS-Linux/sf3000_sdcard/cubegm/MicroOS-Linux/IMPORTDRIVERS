@@ -1,0 +1,22 @@
+#!/bin/sh
+
+LOG_FILE="/mnt/sdcard/cubegm/MicroOS-Linux/Logs/log.moslog"
+
+echo "!!! Starting drivers installation !!!" >> "$LOG_FILE"
+
+MODULES="evdev"
+
+for mod in $MODULES; do
+    echo "Loading module: ${mod}.ko ..." >> "$LOG_FILE"
+    
+    insmod "/mnt/sdcard/cubegm/MicroOS-Linux/lib/modules/${mod}.ko" >> "$LOG_FILE" 2>&1
+    
+    if [ $? -eq 0 ]; then
+        echo "SUCCESS: ${mod}.ko loaded." >> "$LOG_FILE"
+    else
+        echo "ERROR: Failed to load ${mod}.ko!" >> "$LOG_FILE"
+    fi
+done
+
+echo "!!! Drivers installation finished !!!" >> "$LOG_FILE"
+echo "" >> "$LOG_FILE"

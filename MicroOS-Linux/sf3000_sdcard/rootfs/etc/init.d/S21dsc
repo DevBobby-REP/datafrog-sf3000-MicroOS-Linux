@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case "$1" in
+  start)
+	[[ -f /lib/modules/$(uname -r)/extra/dsc.ko ]] && insmod /lib/modules/$(uname -r)/extra/dsc.ko
+	;;
+  *)
+esac
+
+exit $?

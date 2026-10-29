@@ -1,0 +1,12 @@
+kernel/crypto/seqiv.ko:
+kernel/crypto/ctr.ko:
+kernel/crypto/gcm.ko:
+kernel/crypto/ccm.ko:
+kernel/crypto/arc4.ko:
+kernel/drivers/usb/gadget/function/usb_f_mtp.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/usb/gadget/function/usb_f_ptp.ko: kernel/drivers/usb/gadget/function/usb_f_mtp.ko kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/usb/gadget/libcomposite.ko:
+kernel/drivers/hcdrivers/usb/gadget/function/f_ium.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/hcdrivers/usb/gadget/function/f_iap.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/hcdrivers/usb/gadget/legacy/ium.ko: kernel/drivers/usb/gadget/libcomposite.ko
+extra/dsc.ko:
